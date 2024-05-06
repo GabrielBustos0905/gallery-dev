@@ -5,7 +5,7 @@ import Searchbar from "./Searchbar"
 
 function Header () {
     return (
-        <header className="fixed top-0 z-10 w-screen bg-white">
+        <header className="fixed top-0 z-10 w-screen bg-white border-b-2">
             <nav className="p-2 m-auto text-wrap">
                 <div className="h-14 flex justify-between items-center p-2">
                     <div className="w-full h-full items-center flex gap-4">
