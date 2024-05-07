@@ -8,7 +8,7 @@ function MoreInfo() {
             <div className="hidden lg:relative w-1/2 lg:flex flex-row-reverse">
                 <img src="/Giant-Phone.webp"/>
                 <div className="absolute left-1 top-14 w-48 h-auto">
-                    <p className="text-gray-500 text-base text-wrap"><strong className="text-xl">Gallery - Dev</strong> es una pagina en donde puedes buscar imagenes de todo tipo, <strong className="text-blue-300">echa un vistazo!</strong></p>
+                    <p className="text-gray-500 text-base text-wrap"><strong className="text-xl">Gallery - Dev</strong> es una pagina en donde puedes buscar imagenes de alta calidad de todo tipo, <strong className="text-blue-300">echa un vistazo!</strong></p>
                 </div>
             </div>
         </div>
