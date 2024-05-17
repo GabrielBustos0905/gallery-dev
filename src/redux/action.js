@@ -1,5 +1,5 @@
 const API_KEY = 'AyE7tahK3zAfmG3wxWhjLz52V1gLGJDGfE4yycj8jHw'
-const PAGE = 1
+let PAGE = 1
 
 export function getPhotos () {
     return async function (dispatch) {
@@ -26,8 +26,6 @@ export function searchPhoto (value) {
             const response = await fetch(`https://api.unsplash.com/search/photos/?page=${PAGE}&query=${value}&client_id=${API_KEY}&per_page=30`)
             const data = await response.json()
 
-            console.log(data.results)
-
             return dispatch({
                 type: "SEARCH_PHOTO",
                 payload: data.results
@@ -38,5 +36,19 @@ export function searchPhoto (value) {
                 payload: "Photon't"
             })
         }
+    }
+}
+
+export function morePhotos () {
+    return async function (dispatch){
+        PAGE++
+        console.log(PAGE)
+        const response = await fetch(`https://api.unsplash.com/photos/?page=${PAGE}&client_id=${API_KEY}&per_page=30`)
+        const data = await response.json()
+    
+        return dispatch({
+            type: "MORE_PHOTOS",
+            payload: data
+        })
     }
 }

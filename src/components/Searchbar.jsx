@@ -2,10 +2,12 @@ import SearchIcon from "./icons/SearchIcon"
 import { useState } from "react"
 import { searchPhoto } from "../redux/action"
 import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
 
 function Searchbar () {
     const dispatch = useDispatch()
     const [input, setInput] = useState("")
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         e.preventDefault()
@@ -15,6 +17,7 @@ function Searchbar () {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(searchPhoto(input))
+        navigate(`/photo/${input}`)
         setInput("")
     }
 

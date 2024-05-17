@@ -1,16 +1,24 @@
 import { Provider } from "react-redux"
 import store from "./redux/store"
+
+import { BrowserRouter as Router, Routes , Route } from "react-router-dom"
+
 import Header from "./components/Header"
-import ContainerPhotos from "./components/ContainerPhotos"
-import MoreInfo from "./components/MoreInfo"
+import Home from "./pages/Home"
+import PhotoSearched from "./pages/PhotosSearched"
 
 function App() {
   return(
     <div className="flex flex-col justify-center">
       <Provider store={store}>
-        <Header />
-        <MoreInfo />
-        <ContainerPhotos />
+        <Router>
+          <Header />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/photo/:search" element={<PhotoSearched />} />
+            <Route path="*" element={<h1>La pagina erronea uwu</h1>}/>
+          </Routes>
+        </Router>
       </Provider>
     </div>
   )

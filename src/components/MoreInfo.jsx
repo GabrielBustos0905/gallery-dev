@@ -1,10 +1,8 @@
-import EmblaCarousel from "./carousel/EmblaCarousel"
-
 function MoreInfo() {
 
     return (
         <div className="w-11/12 flex flex-col md:flex-row m-auto mt-28 justify-center items-center md:justify-between">
-            <EmblaCarousel />
+            <div></div>
             <div className="hidden md:relative w-1/2 md:flex flex-row-reverse">
                 <img src="/Giant-Phone.webp"/>
                 <div className="absolute left-1 top-14 w-48 h-auto">

@@ -1,15 +1,14 @@
 const initialState = {
     photos: [],
-    allPhotos: []
+    allPhotos: [],
+    searchedPhotos: []
 }
 
 const rootReducer = (state = initialState, action) => {
-    // const allPhotos = state.allPhotos
-    // const actualPhotos = state.photos
+    const allPhotos = state.allPhotos
 
     switch(action.type) {
         case "GET_PHOTOS": {
-            // console.log(action.payload)
             return {
                 ...state,
                 photos: action.payload,
@@ -18,13 +17,19 @@ const rootReducer = (state = initialState, action) => {
         }
 
         case "SEARCH_PHOTO": {
-            // console.log(action.payload)
             return {
                 ...state,
-                photos: action.payload
+                searchedPhotos: action.payload
             }
         }
 
+        case "MORE_PHOTOS": {
+            return {
+                ...state,
+                photos: allPhotos.concat(action.payload)
+            }
+        }
+        
         default:
             return {
                 ...state
