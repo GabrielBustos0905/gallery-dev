@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import CardPhoto from "../components/CardPhoto"
 import { useEffect } from "react"
 import { searchPhoto } from "../redux/action"
+import MorePhotos from "../components/MorePhotos"
 
 function PhotoSearched () {
     const dispatch = useDispatch()
@@ -11,7 +12,7 @@ function PhotoSearched () {
 
     useEffect(() => {
         dispatch(searchPhoto(search))
-    })
+    }, [dispatch])
 
     return (
         <div className="h-screen flex flex-col items-center mt-32 mb-8">
@@ -21,6 +22,7 @@ function PhotoSearched () {
                         <CardPhoto key={photo.id} photo={photo.urls.small} userName={photo.user.name} userImage={photo.user.profile_image.medium} username={photo.user.username} />
                 )) : <p></p>}
             </div>
+            <MorePhotos search={search}/>
         </div>
     )
 }

@@ -1,11 +1,12 @@
 import { useDispatch } from "react-redux"
 import { morePhotos } from "../redux/action"
 
-function MorePhotos () {
+function MorePhotos ({ search }) {
     const dispatch = useDispatch()
 
     const handleClick = (e) => {
         e.preventDefault()
+        if(search) dispatch(morePhotos(search))
         dispatch(morePhotos())
     }
 

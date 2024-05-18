@@ -29,6 +29,13 @@ const rootReducer = (state = initialState, action) => {
                 photos: allPhotos.concat(action.payload)
             }
         }
+
+        case "MORE_PHOTOS_SEARCHED": {
+            return {
+                ...state,
+                searchedPhotos: state.searchedPhotos.concat(action.payload)
+            }
+        }
         
         default:
             return {
