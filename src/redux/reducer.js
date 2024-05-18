@@ -6,6 +6,7 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
     const allPhotos = state.allPhotos
+    const allSearchedPhotos = state.searchedPhotos
 
     switch(action.type) {
         case "GET_PHOTOS": {
@@ -33,7 +34,7 @@ const rootReducer = (state = initialState, action) => {
         case "MORE_PHOTOS_SEARCHED": {
             return {
                 ...state,
-                searchedPhotos: state.searchedPhotos.concat(action.payload)
+                searchedPhotos: allSearchedPhotos.concat(action.payload)
             }
         }
         

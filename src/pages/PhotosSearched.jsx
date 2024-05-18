@@ -4,6 +4,7 @@ import CardPhoto from "../components/CardPhoto"
 import { useEffect } from "react"
 import { searchPhoto } from "../redux/action"
 import MorePhotos from "../components/MorePhotos"
+import SearchIcon from "../components/icons/SearchIcon"
 
 function PhotoSearched () {
     const dispatch = useDispatch()
@@ -15,8 +16,11 @@ function PhotoSearched () {
     }, [dispatch])
 
     return (
-        <div className="h-screen flex flex-col items-center mt-32 mb-8">
-            <h2>{search}</h2>
+        <div className="h-screen flex flex-col mt-32 mb-8">
+            <div className="flex items-center">
+                <h2 className="text-3xl font-semibold capitalize p-4 ml-10">{search}</h2>
+                <SearchIcon strokeWidth={2} className={"ml-[-4px] mt-1"}/>
+            </div>
             <div className="sm:columns-2 md:columns-3 max-[60rem] m-auto p-2">
                 {photos && photos.length ? photos.map(photo => (
                         <CardPhoto key={photo.id} photo={photo.urls.small} userName={photo.user.name} userImage={photo.user.profile_image.medium} username={photo.user.username} />

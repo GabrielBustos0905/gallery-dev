@@ -1,7 +1,7 @@
 function MoreInfo() {
 
     return (
-        <div className="w-11/12 flex flex-col md:flex-row m-auto mt-28 justify-center items-center md:justify-between">
+        <div className="w-11/12 flex flex-col md:flex-row m-auto mt-16 justify-center items-center md:justify-between">
             <div></div>
             <div className="hidden md:relative w-1/2 md:flex flex-row-reverse">
                 <img src="/Giant-Phone.webp"/>
