@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes , Route } from "react-router-dom"
 import Header from "./components/Header"
 import Home from "./pages/Home"
 import PhotoSearched from "./pages/PhotosSearched"
+import PhotoDetail from "./pages/PhotoDetail"
 
 function App() {
   return(
@@ -15,7 +16,8 @@ function App() {
           <Header />
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route path="/photo/:search" element={<PhotoSearched />} />
+            <Route path="/photo/search/:search" element={<PhotoSearched />} />
+            <Route path="/photo/:id" element={<PhotoDetail />} />
             <Route path="*" element={<h1>La pagina erronea uwu</h1>}/>
           </Routes>
         </Router>

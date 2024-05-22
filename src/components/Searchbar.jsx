@@ -17,7 +17,7 @@ function Searchbar () {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(searchPhoto(input))
-        navigate(`/photo/${input}`)
+        navigate(`/photo/search/${input}`)
         setInput("")
     }
 

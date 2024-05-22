@@ -17,7 +17,7 @@ function ContainerPhotos () {
         <div className="m-auto p-2">
             <div className="sm:columns-2 md:columns-3 max-[60rem]">
                 {photos.length ? photos.map(photo => (
-                        <CardPhoto key={photo.id} photo={photo.urls.small} userName={photo.user.name} userImage={photo.user.profile_image.medium} username={photo.user.username} />
+                        <CardPhoto key={photo.id} id={photo.id} photo={photo.urls.small} userName={photo.user.name} userImage={photo.user.profile_image.medium} username={photo.user.username} />
                 )) : <p></p>}
             </div>
             <MorePhotos />            

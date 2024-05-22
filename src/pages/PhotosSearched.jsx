@@ -23,7 +23,7 @@ function PhotoSearched () {
             </div>
             <div className="sm:columns-2 md:columns-3 max-[60rem] m-auto p-2">
                 {photos && photos.length ? photos.map(photo => (
-                        <CardPhoto key={photo.id} photo={photo.urls.small} userName={photo.user.name} userImage={photo.user.profile_image.medium} username={photo.user.username} />
+                        <CardPhoto key={photo.id} id={photo.id} photo={photo.urls.small} userName={photo.user.name} userImage={photo.user.profile_image.medium} username={photo.user.username} />
                 )) : <p></p>}
             </div>
             <MorePhotos search={search}/>

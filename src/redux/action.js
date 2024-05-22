@@ -14,7 +14,7 @@ export function getPhotos () {
         } catch (error) {
             return dispatch({
                 type: "ERROR",
-                payload: "Photos couldn't be loaded"
+                payload: "Las fotos no se pueden cargar"
             })
         }
     }
@@ -33,7 +33,7 @@ export function searchPhoto (value) {
         } catch (error) {
             return dispatch({
                 type: "ERROR",
-                payload: "Photon't"
+                payload: "No existen fotos!"
             })
         }
     }
@@ -59,6 +59,25 @@ export function morePhotos (value) {
             return dispatch({
                 type: "MORE_PHOTOS_SEARCHED",
                 payload: data.results
+            })
+        }
+    }
+}
+
+export function getPhoto (id) {
+    return async function (dispatch) {
+        try {
+            const response = await fetch(`https://api.unsplash.com/photos/${id}/?client_id=${API_KEY}`)
+            const data = await response.json()
+            
+            return dispatch({
+                type: "GET_PHOTO",
+                payload: data
+            })
+        } catch (error) {
+            return dispatch({
+                type: "ERROR",
+                payload: "Foto Inexistente"
             })
         }
     }
