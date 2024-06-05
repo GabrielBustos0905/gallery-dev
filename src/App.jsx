@@ -10,7 +10,7 @@ import PhotoDetail from "./pages/PhotoDetail"
 
 function App() {
   return(
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center items-center">
       <Provider store={store}>
         <Router>
           <Header />
@@ -18,7 +18,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/photo/search/:search" element={<PhotoSearched />} />
             <Route path="/photo/:id" element={<PhotoDetail />} />
-            <Route path="*" element={<h1>La pagina erronea uwu</h1>}/>
+            <Route path="*" element={<h1 className="">La pagina erronea uwu</h1>}/>
           </Routes>
         </Router>
       </Provider>
