@@ -82,3 +82,22 @@ export function getPhoto (id) {
         }
     }
 }
+
+export function getUser (username) {
+    return async function(dispatch){
+        try {
+            const response = await fetch(`https://api.unsplash.com/users/${username}?client_id=${API_KEY}`)
+            const data = await response.json()
+
+            return dispatch({
+                type: "GET_USER",
+                payload: data
+            })
+        } catch (error) {
+            return dispatch({
+                type: "ERROR",
+                payload: "Usuario inexistente"
+            })
+        }
+    }
+}

@@ -2,7 +2,8 @@ const initialState = {
     photo: {},
     photos: [],
     allPhotos: [],
-    searchedPhotos: []
+    searchedPhotos: [],
+    user: {}
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -45,10 +46,17 @@ const rootReducer = (state = initialState, action) => {
                 photo: action.payload
             }
         }
+
+        case "GET_USER": {
+            return {
+                ...state,
+                user: action.payload
+            }
+        }
         
         default:
             return {
-                ...state
+                ...state,
             }
     }
 }
