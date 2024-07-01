@@ -3,7 +3,8 @@ const initialState = {
     photos: [],
     allPhotos: [],
     searchedPhotos: [],
-    user: {}
+    user: {},
+    userPhotos: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -51,6 +52,14 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 user: action.payload
+            }
+        }
+
+        case "GET_USER_PHOTOS": {
+            // console.log(action.payload)
+            return {
+                ...state,
+                userPhotos: action.payload
             }
         }
         

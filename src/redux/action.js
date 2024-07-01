@@ -101,3 +101,22 @@ export function getUser (username) {
         }
     }
 }
+
+export function getUserPhotos (username) {
+    return async function(dispatch) {
+        try {
+            const response = await fetch(`https://api.unsplash.com/users/${username}/photos?client_id=${API_KEY}&per_page=30`)
+            const data = await response.json()
+
+            return dispatch({
+                type: "GET_USER_PHOTOS",
+                payload: data
+            })
+        } catch (error) {
+            return dispatch({
+                type: "ERROR",
+                payload: "-----------"
+            })
+        }
+    }
+}

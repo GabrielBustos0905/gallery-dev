@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CancelIcon from "./icons/CancelIcon";
 import CheckIcon from "./icons/CheckIcon";
 import DotsIcon from "./icons/DotsIcon";
@@ -28,7 +29,7 @@ function CardPhoto ({ user }) {
                     </div>
                 </div>
                 <h4 className="text-lg text-gray-700 mt-4">{user.bio}</h4>
-                <div className="mt-10">
+                <div className="mt-6">
                     
                     {
                         user?.for_hire === true ? <div className="flex items-center">
@@ -40,16 +41,18 @@ function CardPhoto ({ user }) {
                             <p className="ml-2 text-red-500">No disponible para contratacion</p>
                     </div>
                     }
-                    <div className="my-3 flex items-center">
+                    <div className="my-3 flex items-center text-gray-600">
                         <MapPinIcon />
-                        <p className="ml-2 text-gray-600">{user.location}</p>
+                        <p className="ml-2">{user.location}</p>
                     </div>
-                    {
-                        user.social?.instagram_username && <button className="flex items-center text-gray-600 hover:text-black">
-                            <InstagramIcon />
-                            <p className="ml-2">Instagram</p>
-                        </button>
-                    }
+                    <Link to={`https://www.instagram.com/${user.social?.instagram_username}`}>
+                        {
+                            user.social?.instagram_username && <button className="flex items-center text-gray-600 hover:text-black">
+                                    <InstagramIcon />
+                                    <p className="ml-2">Instagram</p>
+                            </button>
+                        }
+                    </Link>
                     <div className="mt-6">
                         <p className="text-lg">Intereses</p>
                         <div className="flex items-center gap-3 mt-2">

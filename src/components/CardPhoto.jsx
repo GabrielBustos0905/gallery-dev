@@ -14,7 +14,7 @@ function CardPhoto ( { photo, userName, userImage, username, id, slug } ) {
                         effect="blur"
                         threshold={10}
                     />
-                    <div className="absolute h-full w-full bg-black/40 flex -bottom-10 hover:bottom-2 opacity-0 hover:opacity-100 transition-all duration-300">
+                    <div className=" absolute h-full w-full bg-black/40 flex -bottom-0 hover:bottom-1 opacity-0 hover:opacity-100 transition-all duration-300">
                         <div className="flex w-full h-12 p-2 my-2 gap-2 items-center">
                             <img className="rounded-full h-10 w-10" src={userImage} alt="" />
                             <div>
