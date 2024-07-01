@@ -6,6 +6,7 @@ import CardUser from "../components/CardUser";
 import PhotoIcon from "../components/icons/PhotoIcon";
 import UserPhotos from "../components/UserPhotos";
 import UsersIcon from "../components/icons/UsersIcon";
+import HeartIcon from "../components/icons/HeartIcon";
 
 function UserDetail() {
     const { username } = useParams()
@@ -25,6 +26,7 @@ function UserDetail() {
                     <p className="">Fotos</p>
                 </button>
                 <button className="flex py-1 gap-2 text-gray-500 hover:text-black font-medium">
+                    <HeartIcon strokeWidth={1.5} fill={"none"}/>
                     <p className="">{user.total_likes} Me Gustas</p>
                 </button>
                 <button className="flex py-1 gap-2 text-gray-500 hover:text-black font-medium">
