@@ -8,6 +8,7 @@ import Home from "./pages/Home"
 import PhotoSearched from "./pages/PhotosSearched"
 import PhotoDetail from "./pages/PhotoDetail"
 import UserDetail from "./pages/UserDetail"
+import Footer from "./components/Footer"
 
 function App() {
   return(
@@ -22,6 +23,7 @@ function App() {
             <Route path="/user/:username" element={<UserDetail />} />
             <Route path="*" element={<h1 className="">La pagina erronea uwu</h1>}/>
           </Routes>
+          <Footer />
         </Router>
       </Provider>
     </div>

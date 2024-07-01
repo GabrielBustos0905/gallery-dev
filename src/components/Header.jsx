@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
-
 import HomeIcon from "./icons/HomeIcon"
-import MenuIcon from "./icons/MenuIcon"
-import UserIcon from "./icons/UserIcon"
 import Searchbar from "./Searchbar"
+
+// import MenuIcon from "./icons/MenuIcon"
+// import UserIcon from "./icons/UserIcon"
 
 function Header () {
     return (
@@ -17,8 +17,8 @@ function Header () {
                         <Searchbar />
                     </div>
                     <div className="flex mr-4 gap-4">
-                        <span><UserIcon width="35" height="35"/></span>
-                        <span><MenuIcon width="35" height="35"/></span>
+                        {/* <span><UserIcon width="35" height="35"/></span>
+                        <span><MenuIcon width="35" height="35"/></span> */}
                     </div>
                 </div>
             </nav>
