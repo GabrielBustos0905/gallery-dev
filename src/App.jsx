@@ -21,7 +21,7 @@ function App() {
             <Route path="/photo/search/:search" element={<PhotoSearched />} />
             <Route path="/photo/:id" element={<PhotoDetail />} />
             <Route path="/user/:username" element={<UserDetail />} />
-            <Route path="*" element={<h1 className="">La pagina erronea uwu</h1>}/>
+            <Route path="*" element={<h1 className="">404 Not Found</h1>}/>
           </Routes>
           <Footer />
         </Router>

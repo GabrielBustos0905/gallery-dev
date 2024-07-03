@@ -16,7 +16,7 @@ function PhotoSearched () {
     }, [dispatch])
 
     return (
-        <div className="h-screen flex flex-col mt-20 mb-8">
+        <div className="h-full flex flex-col mt-20 mb-8">
             <div className="flex items-center">
                 <h2 className="text-3xl font-semibold capitalize p-4 ml-10">{search}</h2>
                 <SearchIcon strokeWidth={2} className={"ml-[-4px] mt-1"}/>
@@ -26,7 +26,9 @@ function PhotoSearched () {
                         <CardPhoto key={photo.id} id={photo.id} slug={photo.slug} photo={photo.urls.small} userName={photo.user.name} userImage={photo.user.profile_image.medium} username={photo.user.username} />
                 )) : <p></p>}
             </div>
-            <MorePhotos search={search}/>
+            {
+                photos.length > 0 && <MorePhotos />
+            } 
         </div>
     )
 }

@@ -20,7 +20,9 @@ function ContainerPhotos () {
                         <CardPhoto key={photo.id} id={photo.id} slug={photo.slug} photo={photo.urls.small} userName={photo.user.name} userImage={photo.user.profile_image.medium} username={photo.user.username} />
                 )) : <p></p>}
             </div>
-            <MorePhotos />            
+            {
+                photos.length > 0 && <MorePhotos />
+            }  
         </div>
     )
 }
