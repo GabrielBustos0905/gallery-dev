@@ -45,14 +45,14 @@ function CardPhoto ({ user }) {
                         <MapPinIcon />
                         <p className="ml-2">{user.location}</p>
                     </div>
-                    <Link to={`https://www.instagram.com/${user.social?.instagram_username}`}>
+                    <a target="_blank" rel="noopener" href={`https://www.instagram.com/${user.social?.instagram_username}`}>
                         {
                             user.social?.instagram_username && <button className="flex items-center text-gray-600 hover:text-black">
                                     <InstagramIcon />
                                     <p className="ml-2">Instagram</p>
                             </button>
                         }
-                    </Link>
+                    </a>
                     <div className="mt-6">
                         <p className="text-lg">Intereses</p>
                         <div className="flex items-center gap-3 mt-2">
